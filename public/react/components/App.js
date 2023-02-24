@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import {ItemSingle} from './ItemSingle';
-import { ItemsList } from './ItemsList';
-import {Login} from './login'
-
 
 // import and prepend the api url to any fetch calls
 import apiURL from '../api';
+import React, { useState, useEffect } from 'react';
+import { ItemSingle } from './ItemSingle';
+import { ItemsList } from './ItemsList';
+
+// import and prepend the api url to any fetch calls
+
 import { ItemAdd } from './ItemAdd';
 
 export const App = () => {
@@ -30,13 +31,9 @@ export const App = () => {
 	}, []);
 
 	return (
-	
-		
 		<main>	
-			
-      <h1>Phones Store</h1>
-			<h2>With Discount</h2>	
-		  
+      <h1>Better Buys</h1>
+			<h2>All things are Better at Better Buys</h2>
 			<button className={isAddingItem ? 'btn-danger' : ''} onClick={() => setIsAddingItem(!isAddingItem)}>{isAddingItem ? 'Cancel' : 'Add Item'}</button>
 			{ isAddingItem && <ItemAdd setIsAddingItem={setIsAddingItem} fetchItems={fetchItems} /> }
 			{
@@ -44,13 +41,6 @@ export const App = () => {
 					? <ItemSingle item={selectedItem} setSelectedItem={setSelectedItem} fetchItems={fetchItems}/>
 					: <ItemsList items={items} setSelectedItem={setSelectedItem} />
 			}
-			
 		</main>
-		
-		
-
 	)
-		
-	
-		
 }

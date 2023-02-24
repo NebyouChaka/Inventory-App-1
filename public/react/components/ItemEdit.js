@@ -4,7 +4,7 @@ import { ItemForm } from './ItemForm';
 
 export const ItemEdit = ({item: originalItem, setIsEditing, fetchItems, setSelectedItem}) => {
   const initialItem = {
-    name: '',
+    title: '',
     price: 0,
     category: '',
     description: '',
